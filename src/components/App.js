@@ -26,9 +26,9 @@ const MultiStepForm = () => {
  
   return (
     <form id="multiStepForm" onSubmit={handleSubmit}>
-      <Step stepNumber={1} currentStep={currentStep} onNext={nextStep} onPrev={prevStep} />
-      <Step stepNumber={2} currentStep={currentStep} onNext={nextStep} onPrev={prevStep} />
-      <Step stepNumber={3} currentStep={currentStep} onNext={nextStep} onPrev={prevStep} />
+      <Step currentStep={currentStep} onNext={nextStep} onPrev={prevStep} />
+      {/* <Step currentStep={currentStep} onNext={nextStep} onPrev={prevStep} />
+      <Step currentStep={currentStep} onNext={nextStep} onPrev={prevStep} /> */}
     </form>
   );
 };

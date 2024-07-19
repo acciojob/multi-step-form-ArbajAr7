@@ -1,11 +1,13 @@
 import React from 'react';
  
-const Step = ({ stepNumber, currentStep, onNext, onPrev, onSubmit }) => {
-  const isActive = currentStep === stepNumber;
- 
+const Step = ({ currentStep, onNext, onPrev }) => {
+//   const isActive = currentStep === stepNumber;
+//   console.log("***************",stepNumber);
+  console.log("################",currentStep);
+//   console.log("----------------",isActive);
   return (
-    <div className={`step ${isActive ? 'active' : ''}`} id={`step${stepNumber}`}>
-      {stepNumber === 1 && (
+    <div>
+      {currentStep === 1 && (
         <>
           <label htmlFor="first_name">First Name:</label>
           <input type="text" id="first_name" name="first_name" required />
@@ -15,7 +17,7 @@ const Step = ({ stepNumber, currentStep, onNext, onPrev, onSubmit }) => {
         </>
       )}
  
-      {stepNumber === 2 && (
+      {currentStep === 2 && (
         <>
           <label htmlFor="model">Car Model:</label>
           <input type="text" id="model" name="model" required />
@@ -25,7 +27,7 @@ const Step = ({ stepNumber, currentStep, onNext, onPrev, onSubmit }) => {
         </>
       )}
  
-      {stepNumber === 3 && (
+      {currentStep === 3 && (
         <>
           <label htmlFor="card_info">Card Number:</label>
           <input type="text" id="card_info" name="card_info" required />
@@ -43,12 +45,12 @@ const Step = ({ stepNumber, currentStep, onNext, onPrev, onSubmit }) => {
       )}
  
       <div>
-        {stepNumber !== 1 && (
+        {currentStep !== 1 && (
           <button type="button" onClick={onPrev}>
             Previous
           </button>
         )}
-        {stepNumber !== 3 ? (
+        {currentStep !== 3 ? (
           <button type="button" onClick={onNext}>
             Next
           </button>

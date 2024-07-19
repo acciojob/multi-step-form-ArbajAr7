@@ -1,13 +1,11 @@
 import React from 'react';
  
-const Step = ({ currentStep, onNext, onPrev }) => {
-//   const isActive = currentStep === stepNumber;
-//   console.log("***************",stepNumber);
-  console.log("################",currentStep);
-//   console.log("----------------",isActive);
+const Step = ({ stepNumber, currentStep, onNext, onPrev }) => {
+  const isActive = currentStep === stepNumber;
+ 
   return (
-    <div id={`step${currentStep}`}>
-      {currentStep === 1 && (
+    <div className={`step ${isActive ? 'active' : ''}`} id={`step${stepNumber}`}>
+      {stepNumber === 1 && (
         <>
           <label htmlFor="first_name">First Name:</label>
           <input type="text" id="first_name" name="first_name" required />
@@ -17,7 +15,7 @@ const Step = ({ currentStep, onNext, onPrev }) => {
         </>
       )}
  
-      {currentStep === 2 && (
+      {stepNumber === 2 && (
         <>
           <label htmlFor="model">Car Model:</label>
           <input type="text" id="model" name="model" required />
@@ -27,7 +25,7 @@ const Step = ({ currentStep, onNext, onPrev }) => {
         </>
       )}
  
-      {currentStep === 3 && (
+      {stepNumber === 3 && (
         <>
           <label htmlFor="card_info">Card Number:</label>
           <input type="text" id="card_info" name="card_info" required />
@@ -45,12 +43,12 @@ const Step = ({ currentStep, onNext, onPrev }) => {
       )}
  
       <div>
-        {currentStep !== 1 && (
+        {stepNumber !== 1 && (
           <button type="button" onClick={onPrev}>
             Previous
           </button>
         )}
-        {currentStep !== 3 ? (
+        {stepNumber !== 3 ? (
           <button type="button" onClick={onNext}>
             Next
           </button>

@@ -6,7 +6,7 @@ const Step = ({ currentStep, onNext, onPrev }) => {
   console.log("################",currentStep);
 //   console.log("----------------",isActive);
   return (
-    <div>
+    <div id={`step${currentStep}`}>
       {currentStep === 1 && (
         <>
           <label htmlFor="first_name">First Name:</label>

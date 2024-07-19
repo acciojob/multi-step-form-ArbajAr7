@@ -48,6 +48,13 @@ const Step = ({ stepNumber, currentStep, onNext, onPrev, onSubmit }) => {
             Previous
           </button>
         )}
+        {stepNumber !== 3 ? (
+          <button type="button" onClick={onNext}>
+            Next
+          </button>
+        ) : (
+          <button type="submit">Submit</button>
+        )}
       </div>
     </div>
   );
